@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory Matching Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Memory Matching Game</h1>
+    <nav>
+      <a href="index.html">Part A: Guessing Game</a>
+      <a href="memory.html">Part B: Memory Game</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="setup-title">
+      <h2 id="setup-title">Game Setup</h2>
+      <form id="setup-form">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+          <option value="3">Easy (3 seconds)</option>
+          <option value="5">Medium (5 seconds)</option>
+          <option value="8">Hard (8 seconds)</option>
+        </select>
+        <label for="pairs">Number of Pairs:</label>
+        <select id="pairs">
+          <option value="8">8 Pairs (120 s)</option>
+          <option value="10">10 Pairs (150 s)</option>
+          <option value="12">12 Pairs (180 s)</option>
+        </select>
+        <button type="submit" class="primary" id="start-button">Start Game</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="play-title">
+      <h2 id="play-title">Play</h2>
+      <div class="stats">
+        <div class="stat"><span class="label">Score</span><span class="value" id="score">0</span></div>
+        <div class="stat"><span class="label" id="timer-label">Time</span><span class="value" id="timer">--</span></div>
+        <div class="stat"><span class="label">Matches</span><span class="value" id="matches">0</span></div>
+        <div class="stat"><span class="label">Wrong tries</span><span class="value" id="wrong">0</span></div>
+      </div>
+      <p class="message" id="message" role="status" aria-live="polite">Choose your settings and press Start Game.</p>
+      <table class="board" id="board" aria-label="Memory cards"></table>
+      <p class="small">+10 per match, &minus;5 per incorrect attempt, &minus;1 per full second of overtime.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="lb-title">
+      <h2 id="lb-title">Leaderboard (Top 5)</h2>
+      <ol class="leaderboard" id="leaderboard"></ol>
+      <p class="small">Saved in this browser. Ties: the earlier score stays ranked higher.</p>
+      <button type="button" id="clear-leaderboard">Clear leaderboard</button>
+    </section>
+
+    <p><a href="index.html">&larr; Back to Part A: Number Guessing Game</a></p>
+  </main>
+
+  <script src="memory.js"></script>
+</body>
+</html>
